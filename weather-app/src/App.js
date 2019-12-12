@@ -1,41 +1,52 @@
-import React, {useEffect, useState} from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import * as callAPI from './callAPI';
+import { useSelector, useDispatch } from 'react-redux';
 
-
-// const API_KEY = "80a942d9bcaae63e1b4f1bbb35adecc3";
-const API_KEY = "bb21d94c723c4c5b7caabb1fb947c684";
-const BASE_URL = "https://api.openweathermap.org/data/2.5/weather?";
 
 function App() {
-  const listCity = ["hanoi", "thanh pho ho chi minh", " thanh hoa", "ninh binh"];
-  const [dataCity, setDataCity] = useState([]);
-  async function getCity(name) {
-    try {
-      const response = await axios.get(`${BASE_URL}q=${name}&appid=${API_KEY}`);
-      console.log("log",response.data);
-      return response.data;
-    } catch (error) {
-      console.log(error);
-    }
-  }
 
-console.log(getCity(listCity[0]));
-  
   return (
-    <div className="App">
+    <div className="container">
       <h2>weather app</h2>
-      <div>
-
-      </div>
+      {/* // input search */}
+      <Search />
+      {/* // display city search */}
+      <City />
     </div>
   );
 }
-
 export default App;
 
-const City = (props) =>{
+const Search = () => {
+  const [valueSearch, setValueSearch] = useState("");
+  const ListSuggestions = [];
+  const dispatchValue = useDispatch();
 
-  return <div>
-    city
+  (function () {
+    callAPI.countries.map(item => {
+      if (item.indexOf(valueSearch) > 1) {
+        ListSuggestions.push(item);
+      }
+    });
+  })();
+
+  return <div className="">
+    <input type="text" name="search" value={valueSearch} onChange={(e) => {
+      setValueSearch(e.target.value);
+    }} />
+    <input value="search" className="btn btn-primary" type="button"
+      onClick={() => dispatchValue({ type: "SET_DATA_CITY", value: valueSearch })} />
+    <ul>
+      {ListSuggestions.length > 0 && ListSuggestions.map((item, index) => <li style={{ cursor: "pointer" }} key={index} onClick={() => setValueSearch(item)} >{item}</li>)}
+    </ul>
   </div>
+}
+
+const City = () => {
+  const city = useSelector(state => state.city);
+  console.log(city);
+  
+  return <div>
+    {city}
+  </div>;
 }
