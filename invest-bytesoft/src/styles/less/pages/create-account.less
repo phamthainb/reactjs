@@ -1,0 +1,164 @@
+.create-form {
+    max-width: 805px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 22px;
+    padding-bottom: 12px;
+
+    .item {
+        margin-bottom: 10px;
+
+        >label {
+            margin-bottom: 9px;
+            display: block;
+
+        }
+
+        .special {
+            font-size: 21px;
+            padding-top: 4px;
+            margin-bottom: 16px;
+        }
+
+        .search__input {
+            border: 1px solid #a6c4e6;
+            border-radius: 2px;
+        }
+
+        .checkbox-list {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            label {
+                position: relative;
+                padding-left: 20px;
+                cursor: pointer;
+                margin: 2px 7px;
+                white-space: nowrap;
+
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 8px;
+                    height: 8px;
+                    position: absolute;
+                    top: 5px;
+                    left: 0;
+                    background: #cdcde5;
+                    border-radius: 3px;
+                    border: 1px solid #7fa6db;
+                }
+
+                &:before {
+                    content: "";
+                    display: block;
+                    width: 6px;
+                    height: 6px;
+                    position: absolute;
+                    top: 7px;
+                    left: 2px;
+                    background: #7fa6db;
+                    border-radius: 2px;
+                    z-index: 1;
+                    transform: scale(0);
+                    transition: all 0.3s;
+                }
+            }
+
+            input {
+                display: none;
+            }
+
+            input[type=checkbox]:checked+label::before {
+                transform: scale(1);
+            }
+        }
+    }
+
+    .create__btn {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        border: 5px solid #fff;
+        box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
+        border-radius: 36px;
+        font-weight: normal;
+        padding: 4px 18px;
+        background: #0bd08b;
+        margin-top: 10px;
+        text-transform: uppercase;
+        font-size: 16px;
+
+        &:hover {
+            box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.2);
+        }
+    }
+}
+
+#main {
+    .main-content {
+        section {
+            .module {
+                .module-content {
+                    .table-tools {
+                        &.create-tools {
+                            max-width: 805px;
+                            margin-left: auto;
+                            margin-right: auto;
+                            text-align: left;
+
+                            .table__btn {
+                                min-width: 100px;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+.section-list {
+    .module-list {
+        .module-content {
+            .table-content {
+                &.create-table {
+                    max-width: 800px;
+                }
+            }
+        }
+    }
+}
+
+.bs-modal {
+
+    // .manager-login {
+    .head {
+
+        .desc,
+        .title {
+            padding-top: 24px;
+            font-size: 21px;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        .title {
+            margin: 0;
+            padding: 24px 0px 0px 0px;
+        }
+    }
+
+    .content {
+        text-align: center;
+
+    }
+
+    .bottom {
+        padding-top: 27px;
+    }
+
+    // }
+}

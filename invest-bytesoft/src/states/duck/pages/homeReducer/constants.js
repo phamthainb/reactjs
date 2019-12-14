@@ -1,0 +1,1 @@
+export const CHANGE_VALUE_MODAL = "CHANGE_VALUE_MODAL";

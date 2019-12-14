@@ -1,0 +1,156 @@
+.bs-modal {
+  &.contract-img {
+    .content-modal {
+      max-width: 900px;
+      .contract-img {
+        .head {
+          .title {
+            font-size: 23px;
+            text-align: center;
+            padding-top: 4px;
+            text-transform: uppercase;
+          }
+        }
+        .content {
+          .img-content {
+            img {
+              max-width: 100%;
+              display: block;
+              margin: 0 auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.bs-modal {
+  &.transform-trade {
+    .content-modal {
+      max-width: 545px;
+      .trade-info {
+        .head {
+          .title {
+            font-size: 23px;
+            text-align: center;
+            padding-top: 13px;
+            text-transform: uppercase;
+          }
+        }
+        .content {
+          max-width: 400px;
+          margin-left: auto;
+          margin-right: auto;
+          padding-top: 34px;
+          padding-bottom: 56px;
+          .desc {
+            font-size: 19px;
+            margin-bottom: 11px;
+            margin-top: 0;
+            &:last-child {
+              padding-top: 32px;
+            }
+            .bold {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.bs-modal {
+  &.cash-trade {
+    .content-modal {
+      max-width: 636px;
+      .trade-info {
+        .head {
+          .title {
+            font-size: 23px;
+            text-align: center;
+            padding-top: 11px;
+            text-transform: uppercase;
+          }
+        }
+        .content {
+          max-width: 547px;
+          margin-left: auto;
+          margin-right: auto;
+          padding-bottom: 82px;
+
+          .info-content {
+            padding-left: 238px;
+            min-height: 226px;
+            align-items: center;
+            position: relative;
+            padding-top: 55px;
+          
+            .img {
+              width: 238px;
+              position: absolute;
+              top: 0;
+              left: 0;
+              img {
+                width: 100%;
+              }
+              .desc {
+                max-width: 238px;
+                text-align: center;
+                margin-top: 10px;
+                
+              }
+            }
+            .text {
+              padding-left: 38px;
+              .text-content {
+                .desc {
+                  margin-top: 0;
+                  font-size: 17px;
+                  margin-bottom: 10px;
+                }
+              }
+            }
+          }
+          
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 767px) {
+  .bs-modal {
+    &.cash-trade {
+      .content-modal {
+        .trade-info {
+          .content {
+              padding-bottom: 40px;
+            .info-content {
+                padding-left: 0;
+        padding-top: 0;
+              .img {
+                position: relative;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+              }
+              .text{
+                padding-left: 0;
+                max-width: 288px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-top: 20px;
+              }
+            }
+            >.desc{
+                padding-left: 0;
+                max-width: 288px;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: left;
+            }
+          }
+        }
+      }
+    }
+  }
+}
